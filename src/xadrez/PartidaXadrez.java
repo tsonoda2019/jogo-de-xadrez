@@ -9,7 +9,7 @@ public class PartidaXadrez {
 	private Tabuleiro tabuleiro;
 
 	public PartidaXadrez() {
-		tabuleiro = new Tabuleiro(8, 8); 
+		tabuleiro = new Tabuleiro(8, 8);
 		configuracaoInicial();
 	}
 
@@ -22,14 +22,23 @@ public class PartidaXadrez {
 		}
 		return mat;
 	}
-	
-	private void inserirNovaPeca (char coluna, int linha, PecaXadrez peca) { 
+
+	private void inserirNovaPeca(char coluna, int linha, PecaXadrez peca) {
 		tabuleiro.posicionarPeca(peca, new XadrezPosicao(coluna, linha).toPosicao());
 	}
-	
-	private void configuracaoInicial () {
-		inserirNovaPeca('b', 6, new Torre(tabuleiro, Cor.BRANCA));
-		inserirNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETA));
-		inserirNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCA));
+
+	private void configuracaoInicial() {
+		inserirNovaPeca('c', 1, new Torre(tabuleiro, Cor.BRANCA));
+		inserirNovaPeca('d', 2, new Torre(tabuleiro, Cor.BRANCA));
+		inserirNovaPeca('e', 2, new Torre(tabuleiro, Cor.BRANCA));
+		inserirNovaPeca('e', 1, new Torre(tabuleiro, Cor.BRANCA));
+		inserirNovaPeca('d', 1, new Torre(tabuleiro, Cor.BRANCA));
+
+		inserirNovaPeca('c', 7, new Torre(tabuleiro, Cor.PRETA));
+		inserirNovaPeca('c', 8, new Torre(tabuleiro, Cor.PRETA));
+		inserirNovaPeca('d', 7, new Torre(tabuleiro, Cor.PRETA));
+		inserirNovaPeca('e', 7, new Torre(tabuleiro, Cor.PRETA));
+		inserirNovaPeca('e', 8, new Torre(tabuleiro, Cor.PRETA));
+		inserirNovaPeca('d', 8, new Rei(tabuleiro, Cor.PRETA));
 	}
 }
